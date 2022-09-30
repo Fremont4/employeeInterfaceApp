@@ -1,0 +1,48 @@
+<div class="container my-5">
+    <h3 class="mb-3">Employees List</h3>
+    <!-- returns only if the employee already  exist -->
+    <table class="table" *ngIf="employees && employees.length > 0" border="3">
+
+        <thead>
+            <tr> 
+              <th scope="col">Id</th>
+              <th scope="col">firstName</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Department</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+              <!-- to loop over the two -->
+            <tr *ngFor="let employee of employees">
+              <!-- <th scope="row">1</th> -->
+              <td>{{employee.id}}</td>
+              <td>{{employee.firstName}}</td>
+              <td>{{employee.email}}</td>
+              <td>{{employee.phone}}</td>
+              <td>{{employee.salary}}</td>
+              <td>{{employee.department}}</td>
+              <td >              
+                <a type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/employees','edit',employee.id]">
+                View
+              </a>
+</td>
+
+<td>
+  <a type="button" class="text-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/employees','edit',employee.id]">
+    Delete
+  </a>
+</td>
+
+
+            </tr>
+            
+          </tbody>
+      </table>
+      <!-- if employee not found display that text -->
+      <p *ngIf="!employees || employees.length <=0">No Employee found</p>
+</div>
+
