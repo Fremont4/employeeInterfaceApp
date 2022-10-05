@@ -8,14 +8,23 @@ import { EmployeeListComponent } from './Components/Employees/employee-list/empl
 import { AddEmployeeComponent } from './Components/Employees/add-employee/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './Components/Employees/edit-employee/edit-employee.component';
+import { RegistationComponent } from "./Components/registation/add-user/registation.component";
+import { LoginComponent } from "./Components/login/login.component";
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
-    EditEmployeeComponent
-  ],
+    EditEmployeeComponent,
+    RegistationComponent,
+    LoginComponent,
+    DashboardComponent,
+    ProfileComponent,
+
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
